@@ -1,6 +1,12 @@
 {% extends 'base/main.html' %}
 {% block content %}
-
+<head>
+    <title>
+        {% block title %}
+        {{task.title|title}}, {{request.user}}
+        {% endblock %}
+    </title>
+</head>
         <div class="header-bar">
             <div>
                 <h1>Hello {{request.user|title}}</h1>

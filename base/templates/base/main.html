@@ -7,8 +7,12 @@
         content="Task List page for the core members of Hack Club ITER">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tasks | HCI-Core</title>
-    <meta name="description" content="">
+    <title>
+        {% block title %}
+        Task List
+        {% endblock %}
+    </title>
+    <meta name="author" content="Saswat Samal">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="https://iter.hackclub.com/img/favicon/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,9 +20,9 @@
 
     <style>
         body {
-            background-color: #FAFAFA;
+            background-color: #000000;
             font-family: 'Nunito', sans-serif;
-            padding-top: 50px;
+            padding-top: 150px;
         }
 
         h1,
@@ -38,7 +42,10 @@
         a {
             font-weight: 600;
         }
-
+        a:hover{
+            color: #ff8800;
+            text-decoration: none;
+        }
         .container {
             max-width: 550px;
             margin: auto;
@@ -57,8 +64,7 @@
             justify-content: space-between;
             color: #fff;
             padding: 10px;
-            border-radius: 5px 5px 0 0;
-            background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%);
+            background-image: radial-gradient( ellipse farthest-corner at top left, #ff8c37, #ec3750);
         }
 
         .header-bar a {
@@ -96,7 +102,7 @@
         .task-incomplete-icon {
             height: 20px;
             width: 20px;
-            background-color: rgb(218, 218, 218);
+            background-color: rgb(255, 0, 0);
             border-radius: 50%;
         }
 
@@ -190,6 +196,11 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .button:hover {
+            background-image: radial-gradient( ellipse farthest-corner at top left, #ff8c37, #ec3750);
+            color: #FFF;
+            transition: all 0.2s ease-in-out;
+        }
 
         .card-body {
             padding: 20px;
@@ -198,11 +209,14 @@
 </head>
 
 <body>
-
+    	
+<a href="https://hackclub.com/"><img style="position: absolute; top: 10px; left: 0px; border: 0; width: 150px; z-index: 999;" src="https://assets.hackclub.com/banners/2022.svg" alt="Hack Club"/></a>
+<h1 style="text-align: center; color: #ced6e0;">Task Manager for Core Team.</h1>
     <div class="container">
         {% block content %} {% endblock content %}
     </div>
-
+<footer style="text-align: center; padding-top: 20px;">
+    <p style="color: #ffffff;">Made with <span style="color: #ff8800;">&hearts;</span> by <a href="https://hackclub.com/" style="color: #ffffff;">Saswat Samal</a> of Hack Club ITER.</p>
 </body>
 
 
